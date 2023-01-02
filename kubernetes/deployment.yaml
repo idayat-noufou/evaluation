@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world
+  labels:
+    app: hello-world
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello-world
+  template:
+    metadata:
+      labels:
+        application: hello-world
+    spec:
+      containers:
+        - name: hello-world
+          image: yrez/node-hello-world
+          ports:
+            - containerPort: 3000
+              protocol: TCP
+              name: api
+          resources:
+            requests:
+              cpu: 10m
+            limits:
+              cpu: 100m
+              memory: 252Mi
