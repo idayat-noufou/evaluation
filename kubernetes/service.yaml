@@ -1,12 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-world
+  name: hello-world-service #name: hello-world #ce nom ne correspond pas au nom de service donné dans l'ingress
 spec:
+  #le selector n'a pas été donné donc service ne pourra pas être lié aux pods de l'api
+  selector:
+    app: hello-world
   ports:
-    - name: api
+    - #name: api  #cette info ne semble pas nécessaire
       protocol: TCP
-      port: 80
+      port: api #port: 80 #il doit correspondre au nom donnée dans le deployment.yaml
       targetPort: 2000
   selector:
     name: hello-world

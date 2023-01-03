@@ -1,5 +1,6 @@
-FROM ubuntu
+FROM node:alpine 
+WORKDIR /app
 COPY . .
-RUN yarn build
 RUN yarn install
+RUN yarn build
 CMD node /app/dist/main.js

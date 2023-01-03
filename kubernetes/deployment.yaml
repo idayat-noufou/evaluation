@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        application: hello-world
+        app: hello-world #on remplace cette valeur application: hello-world
     spec:
       containers:
         - name: hello-world

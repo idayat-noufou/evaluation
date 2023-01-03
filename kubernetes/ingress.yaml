@@ -5,7 +5,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-    - host: hello-world.com
+    - host: hello-world.devops-ynov.com #host: hello-world.com #l'adresse du host ne correspond ppas à celle à laquelle on souhaite accéder.
       http:
         paths:
           - path: /
